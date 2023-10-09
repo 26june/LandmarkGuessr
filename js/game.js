@@ -1,34 +1,50 @@
 const imgContainer = document.getElementById("imgContainer");
+const buttonContainer = document.getElementById("buttonContainer");
+
 const startButton = document.getElementById("startButton");
-const scaleDown = document.getElementById("scaleDown");
+const submitButton = document.getElementById("submitButton");
 
 function handleStartButton(e) {
-  //   console.log(e);
+  imgContainer.removeChild(buttonContainer);
+  anime({
+    targets: "#france",
+    easing: "easeInOutExpo",
+    update: function (anim) {
+      anim.animatables[0].target.style.filter = `blur(${
+        ((anim.progress - 100) * -1) / 100
+      }px)`;
 
-  imgContainer.innerHTML = "";
-
-  const gameImg = document.createElement("img");
-  gameImg.classList.add("paris");
-  gameImg.setAttribute("src", "./paris.jpg");
-
-  imgContainer.appendChild(gameImg);
+      console.log(anim.animatables[0].target.style.filter);
+    },
+  });
 }
 
 let tries = 0;
 const scaling = [10, 5, 3, 2, 1];
 
-function handleScaleButton(e) {
+function handleAnswer(e) {
+  e.preventDefault();
+  if (e.target[0].value === "france") {
+    console.log("correct answer");
+    zoomOutImage(scaling[4]);
+  } else if (tries === 4) {
+    zoomOutImage(scaling[4]);
+    console.log("You have no more tries, the correct answer was france");
+  } else {
+    e.target[0].value = ""; //clear the text box after the answer
+    zoomOutImage(scaling[tries]); //zoom out image based on tries
+    tries++;
+  }
+}
+
+function zoomOutImage(scaling) {
   anime({
-    targets: ".paris",
-    scale: scaling[tries] / 20,
-    // easing: "linear",
+    targets: "#france",
+    scale: scaling / 20,
     easing: "easeInOutExpo",
     duration: 2500,
   });
-
-  tries === 4 ? null : tries++; //stop scaling oncce reached value of 1
 }
 
 startButton.addEventListener("click", handleStartButton);
-
-scaleDown.addEventListener("click", handleScaleButton);
+submitButton.addEventListener("submit", handleAnswer);
