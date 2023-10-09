@@ -78,6 +78,7 @@ function handleAnswer(e) {
     console.log("You have no more tries, the correct answer was france");
   } else {
     e.target[0].value = ""; //clear the text box after the answer
+    wrongAnswer();
     shakeForm();
     zoomOutImage(scaling[tries]); //zoom out image based on tries
     tries++;
@@ -118,8 +119,6 @@ function shakeForm() {
     easing: "easeInOutSine",
     translateX: [moveX, -moveX, moveX / 2, -moveX / 2, 0],
   });
-
-  wrongAnswer();
 }
 
 function wrongAnswer() {
