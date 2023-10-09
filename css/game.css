@@ -10,21 +10,36 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   gap: 16px;
 }
 
-main {
+#imgContainer {
   min-height: 50vh;
   max-height: 50vh;
   aspect-ratio: 1/1;
-  border: 1px solid #ff6f6c;
   overflow: hidden;
-
   object-fit: fill;
+  display: grid;
 }
 
-main img {
+#imgContainer img {
+  grid-area: 1 / 1 / 2 / 2;
   max-width: 100%;
-  object-fit: contain;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   scale: 20;
+  filter: blur(1px);
+}
+
+#buttonContainer {
+  grid-area: 1 / 1 / 2 / 2;
+
+  height: 100%;
+
+  z-index: 9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
