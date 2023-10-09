@@ -29,7 +29,7 @@ const scaling = [10, 5, 3, 2, 1];
 
 function handleAnswer(e) {
   e.preventDefault();
-  if (e.target[0].value === "france") {
+  if (e.target[0].value.toLowerCase() === "france") {
     zoomOutImage(scaling[4]);
     correctAnswer();
     console.log("correct answer");
