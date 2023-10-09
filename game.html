@@ -8,20 +8,33 @@
     <script src="
 https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
 "></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
     <script src="js/game.js" defer></script>
+
     <title>Document</title>
   </head>
   <body>
-    <div id="imgContainer">
-      <div id="buttonContainer">
-        <button id="startButton">Start</button>
+    <main id="gameSection">
+      <div id="imgContainer">
+        <div id="buttonContainer">
+          <button id="startButton">Start</button>
+        </div>
+        <img id="france" src="../assets/france.jpg" alt="France" />
       </div>
-      <img id="france" src="../assets/france.jpg" alt="France" />
-    </div>
 
-    <form id="submitButton">
-      <input type="text" />
-      <input type="submit" />
-    </form>
+      <form id="submitButton">
+        <input
+          type="text"
+          placeholder="Enter a Country Name"
+          disabled="disabled"
+        />
+        <input type="submit" value=">" />
+      </form>
+    </main>
   </body>
 </html>
