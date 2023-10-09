@@ -35,6 +35,7 @@ function handleAnswer(e) {
     console.log("correct answer");
   } else if (tries === 4) {
     zoomOutImage(scaling[4]);
+    noMoreAttempts();
     console.log("You have no more tries, the correct answer was france");
   } else {
     e.target[0].value = ""; //clear the text box after the answer
@@ -72,7 +73,16 @@ function wrongAnswer() {
     targets: "#imgContainer",
     easing: "linear",
     duration: 500,
-    borderColor: ["rgba(255, 0, 0, 0)", "rgba(255, 0, 0, 0.7)"],
+    borderColor: ["rgba(255, 0, 0, 0)", "rgba(255, 105, 97, 1)"],
+  });
+}
+
+function noMoreAttempts() {
+  anime({
+    targets: "#imgContainer",
+    easing: "linear",
+    duration: 500,
+    borderColor: ["rgba(255, 0, 0, 0)", "rgba(255, 181, 76, 1)"],
   });
 }
 
@@ -81,7 +91,7 @@ function correctAnswer() {
     targets: "#imgContainer",
     easing: "linear",
     duration: 500,
-    borderColor: ["rgba(255, 0, 0, 0)", "rgba(0, 255, 0, 0.7)"],
+    borderColor: ["rgba(255, 0, 0, 0)", "rgba(140, 212, 126, 1)"],
   });
 }
 
