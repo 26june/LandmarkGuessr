@@ -1,10 +1,34 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>JavaScript StopWatch</title>
-    <link rel="stylesheet" href="test.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="css/game.css" />
+    <script src="
+https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
+"></script>
+        <script src="test.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/game.js" defer></script>
+
+    <title>Document</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+        <a href="#">Scoreboard</a>
+      </nav>
+    </header>
     <div id="stopwatch-container">
       <h1>Timer Logic</h1>
       <div id="stopwatch">00:00:00</div>
@@ -12,7 +36,22 @@
       <button onclick="pause()">Pause</button>
       <button onclick="reset()">Reset</button>
     </div>
-    <div id="scoreboard"></div>
-    <script src="test.js"></script>
+    <main id="gameSection">
+      <div id="imgContainer">
+        <div id="buttonContainer">
+          <button id="startButton">Start</button>
+        </div>
+        <img id="" src="" alt="" />
+      </div>
+
+      <form id="submitButton">
+        <input
+          type="text"
+          placeholder="Enter a Country Name"
+          disabled="disabled"
+        />
+        <input type="submit" value=">" />
+      </form>
+    </main>
   </body>
 </html>
