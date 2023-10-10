@@ -1,5 +1,6 @@
 const nameForm = document.getElementById("nameForm");
 const messageDisplay = document.getElementById("message");
+const loadingDiv = document.getElementById("loading");
 
 const storedNames = localStorage.getItem("user_name");
 
@@ -17,5 +18,14 @@ nameForm.addEventListener("submit", function (event) {
 
   messageDisplay.textContent = `Welcome, ${userName}!. Ready to Play`;
 
-  nameInput.value = "";
+  // Hide the name form and show the loading div
+  nameForm.style.display = "none";
+  loadingDiv.style.display = "block";
+
+  // Simulate a 3-second delay and then redirect to the game page
+  setTimeout(function () {
+    window.location.href = "game.html";
+  }, 3000);
+
+  // nameInput.value = "";
 });
