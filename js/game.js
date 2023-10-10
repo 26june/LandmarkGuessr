@@ -121,7 +121,7 @@ function shakeForm() {
   const moveX = 32;
 
   anime({
-    targets: "body",
+    targets: "main",
     easing: "easeInOutSine",
     translateX: [moveX, -moveX, moveX / 2, -moveX / 2, 0],
   });
