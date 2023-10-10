@@ -1,7 +1,7 @@
 #stopwatch-container {
   width: 50vh;
   padding: 5% 0;
-  color: #e7eafb;
+  color: #0fff50;
   text-align: center;
   background-color: #202020;
   box-shadow: 1px 0px 4px 2px #9c9a9a;
@@ -28,23 +28,4 @@ button:hover {
   background-color: #fff;
   color: #202020;
   cursor: pointer;
-}
-
-#scoreboard {
-  width: 80%;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #e9ecef;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#scoreboard div {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  color: #333;
-}
-
-#scoreboard div:last-child {
-  border-bottom: none;
 }

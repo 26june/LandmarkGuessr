@@ -2,29 +2,6 @@ body {
   text-align: center;
 }
 
-header {
-  padding: 20px;
-  background-color: navy;
-}
-
-nav {
-  font-size: 2rem;
-}
-
-nav a {
-  text-decoration: none;
-  padding: 20px;
-  color: gold;
-}
-a:hover {
-  color: fuchsia;
-}
-
 h1 {
   color: palevioletred;
-}
-
-footer {
-  background-color: navy;
-  padding: 20px;
 }
