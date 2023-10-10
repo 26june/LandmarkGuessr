@@ -26,16 +26,10 @@
         <span id="message"></span>
       </form>
 
-      <img
-        id="startButton"
-        src="start.png"
-        alt="Start Timer"
-        onclick="startTimer()"
-      />
-      <button id="endButton" style="display: none" onclick="endTimer()">
-        End Timer
-      </button>
-      <p id="timerDisplay">Timer: 0 seconds</p>
+      <div id="loading" style="display: none">
+        <img src="loading.gif" alt="Loading" />
+        <p>Loading...</p>
+      </div>
     </main>
     <footer></footer>
   </body>
