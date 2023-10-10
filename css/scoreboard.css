@@ -1,6 +1,9 @@
 body {
   font-family: "Arial", sans-serif;
   text-align: center;
+  background-color: #1e2124;
+  color: #ffffff;
+  font-family: "Work Sans", sans-serif;
 }
 
 table {
@@ -17,7 +20,7 @@ td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #1e2124;
 }
 
 tr:hover {

@@ -1,9 +1,3 @@
-
-
-body {
-  text-align: center;
-}
-
 header {
   padding: 20px;
   background-color: navy;
@@ -11,6 +5,7 @@ header {
 
 nav {
   font-size: 2rem;
+  text-align: center;
 }
 
 nav a {
@@ -20,13 +15,4 @@ nav a {
 }
 a:hover {
   color: fuchsia;
-}
-
-h1 {
-  color: palevioletred;
-}
-
-footer {
-  background-color: navy;
-  padding: 20px;
 }
