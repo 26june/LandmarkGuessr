@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/app.js" defer></script>
+    <script src="js/timer.js" defer></script>
     <title>Landmark Guesser</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="game.html">Game</a>
         <a href="#">Scoreboard</a>
       </nav>
@@ -21,12 +22,20 @@
       <form id="nameForm">
         <label for="name">Name:</label>
         <input type="text" autocomplete="off" id="name" name="name" required />
-
         <input type="submit" value="Submit..." /><br /><br />
         <span id="message"></span>
-
-        <ul id="nameList"></ul>
       </form>
+
+      <img
+        id="startButton"
+        src="start.png"
+        alt="Start Timer"
+        onclick="startTimer()"
+      />
+      <button id="endButton" style="display: none" onclick="endTimer()">
+        End Timer
+      </button>
+      <p id="timerDisplay">Timer: 0 seconds</p>
     </main>
     <footer></footer>
   </body>
