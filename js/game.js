@@ -64,6 +64,13 @@ function gameRestart() {
   tries = 0;
   imgContainer.appendChild(oldStartButton);
   zoomInImage(animationImageTarget);
+  answerForm[0][1].disabled = true;
+
+  if (allLandmarks.length === 1) {
+    pushLandmarks();
+  } else {
+    allLandmarks.splice(currentIndex, 1);
+  }
 
   startPageLoad();
 }
@@ -72,7 +79,6 @@ function gameEnd() {
   zoomOutImage(scaling[4]);
   pause();
   gameFinished = true;
-  answerForm[0][0].disabled = true;
 }
 
 function handleStartButton() {
@@ -144,6 +150,17 @@ function zoomOutImage(scaling) {
     scale: scaling / 20,
     easing: "easeInOutExpo",
     duration: 2500,
+    update: function () {
+      answerForm[0][0].disabled = true;
+      answerForm[0][1].disabled = true;
+    },
+
+    complete: function () {
+      //dont enable the text box after zoom if game is finished
+      gameFinished
+        ? (answerForm[0][1].disabled = false)
+        : (answerForm[0][0].disabled = answerForm[0][1].disabled = false);
+    },
   });
 }
 
