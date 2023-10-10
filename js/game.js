@@ -11,8 +11,9 @@ const imgPlaceholder = document.getElementsByTagName("img");
 
 //Globals
 let currentIndex;
-
 let animationImageTarget;
+let gameFinished = false;
+let oldStartButton;
 
 function Landmarks(landmarkName, landmarkSrc) {
   this.landmarkName = landmarkName;
@@ -27,7 +28,7 @@ function generateRandom() {
   return Math.floor(Math.random() * allLandmarks.length);
 }
 
-function startPageLoad() {
+function pushLandmarks() {
   new Landmarks("France", "../assets/France.jpg");
   new Landmarks("Japan", "../assets/Japan.jpg");
   new Landmarks("Egypt", "../assets/Egypt.jpg");
@@ -36,22 +37,53 @@ function startPageLoad() {
   new Landmarks("Greece", "../assets/Greece.jpg");
   new Landmarks("Italy", "../assets/Italy.jpg");
   new Landmarks("Ukraine", "../assets/Ukraine.jpg");
+}
 
+pushLandmarks();
+startPageLoad();
+
+function startPageLoad() {
   currentIndex = generateRandom();
 
   imgPlaceholder[0].src = allLandmarks[currentIndex].landmarkSrc;
   imgPlaceholder[0].id = imgPlaceholder[0].alt =
     allLandmarks[currentIndex].landmarkName;
 
-  animationImageTarget = `#${allLandmarks[currentIndex].landmarkName}`;
+  imgPlaceholder[0].style.filter = "blur(1px)";
+  imgPlaceholder[0].style.scale = "20";
 
+  animationImageTarget = `#${allLandmarks[currentIndex].landmarkName}`;
   console.dir(imgPlaceholder[0]);
 }
 
-startPageLoad();
+function gameRestart() {
+  //reset everyting
+  noMoreAttempts();
+  reset();
+  gameFinished = false;
+  tries = 0;
+  imgContainer.appendChild(oldStartButton);
+  zoomInImage(animationImageTarget);
+  answerForm[0][1].disabled = true;
+
+  if (allLandmarks.length === 1) {
+    pushLandmarks();
+  } else {
+    allLandmarks.splice(currentIndex, 1);
+  }
+
+  startPageLoad();
+}
+
+function gameEnd() {
+  zoomOutImage(scaling[4]);
+  pause();
+  gameFinished = true;
+}
 
 function handleStartButton() {
-  imgContainer.removeChild(buttonContainer);
+  oldStartButton = imgContainer.removeChild(buttonContainer);
+
   answerForm[0][0].disabled = false;
   answerForm[0][1].disabled = false;
 
@@ -65,19 +97,23 @@ const scaling = [10, 5, 3, 2, 1];
 
 function handleAnswer(e) {
   e.preventDefault();
+  if (gameFinished) {
+    e.target[0].value = "";
+    gameRestart();
+    return;
+  }
+
   if (
     e.target[0].value.toLowerCase() ===
     allLandmarks[currentIndex].landmarkName.toLowerCase()
   ) {
-    zoomOutImage(scaling[4]);
     correctAnswer();
-    pause();
-    console.log("correct answer");
+    gameEnd();
+    e.target[0].value = "Press Go to Play Again";
   } else if (tries === 4) {
-    zoomOutImage(scaling[4]);
     noMoreAttempts();
-    pause();
-    console.log("You have no more tries, the correct answer was france");
+    gameEnd();
+    e.target[0].value = "Press Go to Play Again";
   } else {
     e.target[0].value = ""; //clear the text box after the answer
     wrongAnswer();
@@ -114,6 +150,26 @@ function zoomOutImage(scaling) {
     scale: scaling / 20,
     easing: "easeInOutExpo",
     duration: 2500,
+    update: function () {
+      answerForm[0][0].disabled = true;
+      answerForm[0][1].disabled = true;
+    },
+
+    complete: function () {
+      //dont enable the text box after zoom if game is finished
+      gameFinished
+        ? (answerForm[0][1].disabled = false)
+        : (answerForm[0][0].disabled = answerForm[0][1].disabled = false);
+    },
+  });
+}
+
+function zoomInImage(imgToZoom) {
+  anime({
+    targets: imgToZoom,
+    scale: 1,
+    easing: "linear",
+    duration: 1,
   });
 }
 
@@ -121,7 +177,7 @@ function shakeForm() {
   const moveX = 32;
 
   anime({
-    targets: "body",
+    targets: "#imgContainer",
     easing: "easeInOutSine",
     translateX: [moveX, -moveX, moveX / 2, -moveX / 2, 0],
   });
