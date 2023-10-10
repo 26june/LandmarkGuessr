@@ -240,9 +240,11 @@ function calculateElapsedTime() {
 function saveElapsedTimeToLocalStorage() {
   // Retrieve the previously saved times from Local Storage, or initialize an empty array if none exist
   let elapsedTimes = JSON.parse(localStorage.getItem("elapsedTimes") || "[]");
+  let userName = localStorage.getItem("user_name") || `<no name>`;
 
   // Create an object with the current elapsed time and the current date/time
   let elapsedTime = {
+    userName: userName,
     time: calculateElapsedTime(),
     date: new Date().toLocaleString(),
   };

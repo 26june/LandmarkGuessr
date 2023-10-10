@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let timeCell = row.insertCell(2);
 
     rankCell.textContent = index + 1;
-    nameCell.textContent = entry.name; // Assuming the name is stored in the entry object
+    nameCell.textContent = entry.userName; // Assuming the name is stored in the entry object
     timeCell.textContent = entry.time;
   });
 });
@@ -27,7 +27,6 @@ function saveElapsedTimeToLocalStorage() {
 
   // Get the user's name from localStorage
   let userName = localStorage.getItem("user_name");
-
   // Create an object with the current elapsed time, the user's name, and the current date/time
   let elapsedTime = {
     name: userName, // Kullanıcının ismini burada ekliyoruz
