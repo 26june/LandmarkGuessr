@@ -6,5 +6,22 @@
   color: #ffffff;
 }
 body {
+  height: 100vh;
+  width: 100vw;
   background-color: #1e2124;
+}
+
+header {
+  height: 10%;
+}
+
+main {
+  height: 85%;
+  padding-top: 16px;
+}
+
+footer {
+  height: 5%;
+  background-color: navy;
+  padding: 20px;
 }

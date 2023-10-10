@@ -29,22 +29,3 @@ button:hover {
   color: #202020;
   cursor: pointer;
 }
-
-#scoreboard {
-  width: 80%;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #e9ecef;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#scoreboard div {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  color: #333;
-}
-
-#scoreboard div:last-child {
-  border-bottom: none;
-}
