@@ -1,6 +1,10 @@
 header {
-  padding: 20px;
   background-color: navy;
+  height: 10%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {

@@ -18,6 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
     nameCell.textContent = entry.userName; // Assuming the name is stored in the entry object
     timeCell.textContent = entry.time;
   });
+
+  let trChildren = document.getElementsByTagName("tr");
+  // Create a timeline with default parameters
+  let animeTimeline = anime.timeline({
+    easing: "easeOutExpo",
+    duration: 5000,
+    delay: anime.stagger(700, { start: 1000 }),
+  });
+
+  animeTimeline.add({
+    targets: trChildren,
+    opacity: 1,
+  });
 });
 
 // Function to save the elapsed time as an object in Local Storage
