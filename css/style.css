@@ -1,14 +1,4 @@
-html {
-  max-height: 100vh;
-  max-width: 100vw;
-  background-color: red;
-
-  overflow: hidden;
-}
-
 body {
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
@@ -18,9 +8,4 @@ h1 {
 
 input {
   color: black;
-}
-
-#svg-container {
-  height: 100vh;
-  width: 100vw;
 }
