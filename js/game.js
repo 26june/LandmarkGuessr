@@ -299,7 +299,6 @@ function pause() {
 
   // Log the elapsed time to the console
   let elapsedTime = "Elapsed Time: " + calculateElapsedTime();
-  console.log(elapsedTime);
 
   // Save the elapsed time to Local Storage
   saveElapsedTimeToLocalStorage(elapsedTime);
@@ -317,11 +316,4 @@ function reset() {
 
   // Reset the stopwatch display
   stopwatch.innerHTML = "00:00:00";
-
-  // Log the elapsed time to the console (which will be "00:00:00" since it's reset)
-  let elapsedTime = "Elapsed Time: " + calculateElapsedTime();
-  console.log(elapsedTime);
-
-  // Save the elapsed time to Local Storage
-  saveElapsedTimeToLocalStorage(elapsedTime);
 }
