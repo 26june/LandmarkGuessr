@@ -1,3 +1,10 @@
+anime({
+  targets: "main",
+  easing: "linear",
+  duration: 500,
+  opacity: 1,
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const leaderboardTableBody = document
     .getElementById("leaderboardTable")
@@ -24,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let animeTimeline = anime.timeline({
     easing: "easeOutExpo",
     duration: 5000,
-    delay: anime.stagger(700, { start: 1000 }),
+    delay: anime.stagger(500, { start: 500 }),
   });
 
   animeTimeline.add({

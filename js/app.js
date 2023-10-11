@@ -29,3 +29,16 @@ nameForm.addEventListener("submit", function (event) {
 
   // nameInput.value = "";
 });
+
+function toLeaderboard() {
+  anime({
+    targets: "main",
+    easing: "linear",
+    duration: 500,
+    opacity: 0,
+  });
+
+  setTimeout(() => {
+    window.location.href = "/scoreboard.html";
+  }, 500);
+}
