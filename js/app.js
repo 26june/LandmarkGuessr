@@ -30,7 +30,7 @@ nameForm.addEventListener("submit", function (event) {
   // nameInput.value = "";
 });
 
-function toLeaderboard() {
+function toLocation(myDestination) {
   anime({
     targets: "main",
     easing: "linear",
@@ -39,6 +39,6 @@ function toLeaderboard() {
   });
 
   setTimeout(() => {
-    window.location.href = "/scoreboard.html";
+    window.location.href = myDestination;
   }, 500);
 }
