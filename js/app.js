@@ -32,26 +32,34 @@
 
 let moveY = 16;
 
-function hoverPoint(pins) {
-  let mapPins = {
-    home: "#homePin",
-    game: "#gamePin",
-    leaderboard: "#leaderboardPin",
-  };
+let mapPinsId = {
+  home: "#homePin",
+  game: "#gamePin",
+  leaderboard: "#leaderboardPin",
+};
 
+let mapPinsHref = {
+  home: "../index.html",
+  game: "../game.html",
+  leaderboard: "../scoreboard.html",
+};
+
+function hoverPoint(pins) {
   anime({
-    targets: mapPins[pins],
+    targets: mapPinsId[pins],
     easing: "easeInOutSine",
     translateY: [-moveY, 0, -moveY / 2, 0],
   });
 }
 
 function clickPoint(clickLocation) {
-  let mapPins = {
-    home: "../index.html",
-    game: "../game.html",
-    leaderboard: "../scoreboard.html",
-  };
+  anime({
+    targets: mapPinsId[clickLocation],
+    easing: "easeInOutSine",
+    duration: 1000,
+  });
 
-  window.location.href = mapPins[clickLocation];
+  setTimeout(() => {
+    window.location.href = mapPinsHref[clickLocation];
+  }, 0);
 }
