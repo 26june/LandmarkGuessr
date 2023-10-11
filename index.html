@@ -11,10 +11,11 @@
     />
     <link rel="stylesheet" href="css/globals.css" />
     <link rel="stylesheet" href="css/header.css" />
-
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css" />
 
     <script src="js/app.js" defer></script>
+    <script src="js/animated.js"></script>
     <title>Landmark Guesser</title>
   </head>
   <body>
@@ -26,18 +27,66 @@
       </nav>
     </header>
     <main>
-      <h1>Landmark Guesser</h1>
-      <h2>Instructions on how to play</h2>
+      <h1 class="animated-text" id="animated-heading">Landmark Guesser</h1>
+      <div class="landmark-icons-container">
+        <img class="landmark-icon" src="icons/landmark1.png" alt="Landmark 1" />
+        <img class="landmark-icon" src="icons/landmark2.png" alt="Landmark 2" />
+        <img class="landmark-icon" src="icons/landmark3.png" alt="Landmark 3" />
+        <img class="landmark-icon" src="icons/landmark4.png" alt="Landmark 4" />
+        <img class="landmark-icon" src="icons/landmark5.png" alt="Landmark 5" />
+        <img class="landmark-icon" src="icons/landmark6.png" alt="Landmark 6" />
+        <img class="landmark-icon" src="icons/landmark7.png" alt="Landmark 7" />
+        <img class="landmark-icon" src="icons/landmark9.png" alt="Landmark 9" />
+        <img
+          class="landmark-icon"
+          src="icons/landmark10.png"
+          alt="Landmark 10"
+        />
+        <img
+          class="landmark-icon"
+          src="icons/landmark11.png"
+          alt="Landmark 11"
+        />
+      </div>
+      <p>
+        This game tests the knowledge of the player on guessing the right
+        location of landmarks in various countries. The players attempt to guess
+        the country location of the shown landmark. If a wrong location is
+        given, the image zooms out to give more clue of the right location
+      </p>
+
       <form id="nameForm">
-        <label for="name">Name:</label>
-        <input type="text" autocomplete="off" id="name" name="name" required />
-        <input type="submit" value="Submit..." /><br /><br />
-        <span id="message"></span>
+        <fieldset>
+          <legend>Enter your name and Submit to play</legend>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            autocomplete="off"
+            id="name"
+            name="name"
+            required
+          />
+          <input
+            id="buttonSubmit"
+            type="submit"
+            value="Submit..."
+          /><br /><br />
+          <span id="message"></span>
+        </fieldset>
       </form>
 
       <div id="loading" style="display: none">
         <img src="loading.gif" alt="Loading" />
         <p>Loading...</p>
+      </div>
+
+      <div class="instruction-div">
+        <h2>Instructions</h2>
+        <ul>
+          <li>Enter your name and press enter</li>
+          <li>Type in the location. You have 5 attempts</li>
+          <li>Check the leaderboard to view your rank</li>
+        </ul>
       </div>
     </main>
     <footer></footer>
