@@ -15,15 +15,16 @@
     <script src="
 https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
 "></script>
+    <script src="js/navigation.js" defer></script>
     <script src="js/scoreboard.js" defer></script>
     <title>Scoreboard</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="game.html">Game</a>
-        <a href="scoreboard.html">Leaderboard</a>
+        <a onclick="toLocation(`./index.html`)">Home</a>
+        <a onclick="toLocation(`./game.html`)">Game</a>
+        <a onclick="toLocation(`/scoreboard.html`)">Leaderboard</a>
       </nav>
     </header>
     <main>

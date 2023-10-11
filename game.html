@@ -17,6 +17,7 @@ https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
       rel="stylesheet"
     />
+    <script src="js/navigation.js" defer></script>
     <script src="js/game.js" defer></script>
 
     <title>Document</title>
@@ -24,9 +25,9 @@ https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
   <body>
     <header>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="game.html">Game</a>
-        <a href="scoreboard.html">Leaderboard</a>
+        <a onclick="toLocation(`./index.html`)">Home</a>
+        <a onclick="toLocation(`./game.html`)">Game</a>
+        <a onclick="toLocation(`/scoreboard.html`)">Leaderboard</a>
       </nav>
     </header>
     <main>
