@@ -31,12 +31,12 @@ function clickPoint(clickLocation) {
   anime({
     targets: `${mapPinsId[clickLocation]} g:nth-child(2) circle`,
     easing: "easeInOutSine",
-    duration: 2000,
+    duration: 1000,
     scale: 100,
     fill: "#1e2124",
   });
 
   setTimeout(() => {
     window.location.href = mapPinsHref[clickLocation];
-  }, 2000);
+  }, 1000);
 }
