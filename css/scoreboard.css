@@ -35,13 +35,26 @@ tr:nth-child(1) td:nth-child(2) {
   border: 1px solid gold;
   color: gold;
 }
+tr:nth-child(1) td:nth-child(2)::after {
+  content: " 🥇";
+}
+
 tr:nth-child(2) td:nth-child(2) {
   border: 1px solid silver;
   color: silver;
 }
+
+tr:nth-child(2) td:nth-child(2)::after {
+  content: " 🥈";
+}
+
 tr:nth-child(3) td:nth-child(2) {
   border: 1px solid #6a3805;
   color: #6a3805;
+}
+
+tr:nth-child(3) td:nth-child(2)::after {
+  content: " 🥉";
 }
 
 #tableTitle {
