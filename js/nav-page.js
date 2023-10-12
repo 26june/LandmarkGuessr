@@ -9,7 +9,7 @@ let mapPinsId = {
 };
 
 let mapPinsHref = {
-  home: "../index.html",
+  home: "../home.html",
   game: "../game.html",
   leaderboard: "../scoreboard.html",
 };
