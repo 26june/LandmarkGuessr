@@ -79,7 +79,7 @@ p {
 
 /* Apply animation to the landmark icons */
 .landmark-icon {
-  animation: scrollLeft 5s linear infinite; /* You can adjust the duration as needed */
+  animation: scrollLeft 5s linear infinite alternate; /* You can adjust the duration as needed */
 }
 
 input {
