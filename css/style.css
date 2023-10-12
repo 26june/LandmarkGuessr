@@ -86,3 +86,14 @@ p {
 input {
   color: black;
 }
+
+#loading {
+  display: none;
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+#loading-icon {
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+}
