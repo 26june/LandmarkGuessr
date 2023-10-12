@@ -12,6 +12,7 @@ function handleSubmit(event) {
     email: userEmail.value,
   };
   console.log(data);
+  let localData = JSON.stringify(data);
+  localStorage.setItem("userData", localData);
 }
-
 form.addEventListener("submit", handleSubmit);
