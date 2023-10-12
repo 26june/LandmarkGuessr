@@ -6,7 +6,29 @@ html {
   overflow: hidden;
 }
 
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#navPageHeader {
+  grid-column: 1/3;
+  grid-row: 1/2;
+
+  align-self: center;
+}
+
+#navPageHeader h1 {
+  font-size: 3em;
+}
+
 #svg-container {
   height: 100vh;
   width: 100vw;
+
+  display: grid;
+
+  grid-column: 1/3;
+  grid-row: 1/5;
 }
