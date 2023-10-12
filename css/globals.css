@@ -12,12 +12,6 @@ body {
 }
 
 main {
-  height: 85%;
+  height: 75%;
   padding-top: 16px;
-}
-
-footer {
-  height: 5%;
-  background-color: navy;
-  padding: 20px;
 }

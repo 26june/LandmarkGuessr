@@ -15,11 +15,12 @@ https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
     <link rel="stylesheet" href="css/globals.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="contact.css" />
     <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
     <script src="js/navigation.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/animated.js"></script>
+
     <title>Landmark Guesser</title>
   </head>
   <body>
@@ -92,16 +93,27 @@ https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js
       </div>
     </main>
     <footer>
-      <p class="pclass">Fill the contact form below to give your details</p>
-      <form id="details">
-        <label class="labelclass" for="name">Please enter your name</label>
-        <input type="text" name="name" id="name" />
+      <div>
+        <p class="pclass">
+          Want to work with us? Fill the contact form below to give your details
+        </p>
+        <form id="details">
+          <label class="labelclass" for="name" autcomplete="off"
+            >Please enter your name</label
+          >
+          <input type="text" name="name" id="name" />
 
-        <label class="labelclass" for="email">Please enter your email</label>
-        <input type="email" name="email" id="email" />
+          <label class="labelclass" for="email" autcomplete="off"
+            >Please enter your email</label
+          >
+          <input type="email" name="email" id="email" />
 
-        <button class="buttonclass" type="submit">Enter</button>
-      </form>
+          <button class="buttonclass" type="submit">Enter</button>
+        </form>
+      </div>
+      <a href="https://github.com/26june/LandmarkGuessr"
+        ><img id="githubLogo" src="./icons/github.png" alt="Github"
+      /></a>
     </footer>
   </body>
 </html>

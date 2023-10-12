@@ -1,0 +1,35 @@
+footer {
+  display: flex;
+  height: 15%;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+
+.labelclass {
+  font-size: 1rem;
+}
+
+.labelclass input {
+  height: 10%;
+}
+
+.buttonclass {
+  color: black;
+  font-size: 1rem;
+}
+
+.pclass {
+  color: red;
+}
+
+footer a {
+  height: 50px;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+#githubLogo {
+  max-height: 50px;
+}
