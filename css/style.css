@@ -82,3 +82,7 @@ p {
 .landmark-icon {
   animation: scrollLeft 5s linear infinite; /* You can adjust the duration as needed */
 }
+
+input {
+  color: black;
+}

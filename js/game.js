@@ -75,9 +75,9 @@ function gameRestart() {
   startPageLoad();
 }
 
-function gameEnd() {
+function gameEnd(winCondition) {
   zoomOutImage(scaling[4]);
-  pause();
+  winCondition ? pause() : reset();
   gameFinished = true;
 }
 
@@ -108,12 +108,12 @@ function handleAnswer(e) {
     allLandmarks[currentIndex].landmarkName.toLowerCase()
   ) {
     correctAnswer();
-    gameEnd();
+    gameEnd(true);
     e.target[0].value = "Press Go to Play Again";
   } else if (tries === 4) {
     noMoreAttempts();
-    gameEnd();
-    e.target[0].value = "Press Go to Play Again";
+    gameEnd(false);
+    e.target[0].value = `${allLandmarks[currentIndex].landmarkName}`;
   } else {
     e.target[0].value = ""; //clear the text box after the answer
     wrongAnswer();
@@ -299,7 +299,6 @@ function pause() {
 
   // Log the elapsed time to the console
   let elapsedTime = "Elapsed Time: " + calculateElapsedTime();
-  console.log(elapsedTime);
 
   // Save the elapsed time to Local Storage
   saveElapsedTimeToLocalStorage(elapsedTime);
@@ -317,11 +316,4 @@ function reset() {
 
   // Reset the stopwatch display
   stopwatch.innerHTML = "00:00:00";
-
-  // Log the elapsed time to the console (which will be "00:00:00" since it's reset)
-  let elapsedTime = "Elapsed Time: " + calculateElapsedTime();
-  console.log(elapsedTime);
-
-  // Save the elapsed time to Local Storage
-  saveElapsedTimeToLocalStorage(elapsedTime);
 }

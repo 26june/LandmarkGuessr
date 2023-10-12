@@ -3,13 +3,18 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  opacity: 0;
+  overflow: scroll;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 table {
   margin: 0px auto;
   width: 50%;
   border: none;
-  border-collapse: collapse;
 }
 
 th,
@@ -24,6 +29,19 @@ th {
 
 tr {
   opacity: 0;
+}
+
+tr:nth-child(1) td:nth-child(2) {
+  border: 1px solid gold;
+  color: gold;
+}
+tr:nth-child(2) td:nth-child(2) {
+  border: 1px solid silver;
+  color: silver;
+}
+tr:nth-child(3) td:nth-child(2) {
+  border: 1px solid #6a3805;
+  color: #6a3805;
 }
 
 #tableTitle {
