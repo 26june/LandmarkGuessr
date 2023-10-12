@@ -11,3 +11,6 @@ The player starts the game, and landmark picture displays on the screen and requ
 readme -> who made it?
 
 This game is being programmed by group of 4 budding software developers as part of their project assignments.It is an ongoing project work and its code are being upgraded from time to time.
+
+Hosted on:
+https://landmark-guessr.netlify.app/game.html 
