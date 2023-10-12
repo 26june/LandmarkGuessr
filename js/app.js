@@ -29,4 +29,3 @@ nameForm.addEventListener("submit", function (event) {
 
   // nameInput.value = "";
 });
-
