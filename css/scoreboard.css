@@ -60,3 +60,7 @@ tr:nth-child(3) td:nth-child(2)::after {
 #tableTitle {
   font-size: 32px;
 }
+
+body {
+  overflow: hidden;
+}
