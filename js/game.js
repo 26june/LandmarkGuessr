@@ -77,8 +77,8 @@ function gameRestart() {
 
 function gameEnd(winCondition) {
   zoomOutImage(scaling[4]);
-  winCondition ? pause() : reset();
   gameFinished = true;
+  winCondition ? pause() : reset();
 }
 
 function handleStartButton() {
